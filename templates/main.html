@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>dayBit</title>
+    <meta name="description" content="Creating Modal Window with Bootstrap">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="static/css/index.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="main">
+    <a class="btn btn-lg btn-primary btn-block" id="report" href="/showForms">角色信息</a>
+    <p id="characterInfo">
+                              {% if roleList %}
+                        {% for role in roleList %}
+                                    {% if role.roletype == 1 %}
+                                        学神
+                                    {% elif role.roletype == 2 %}
+                                        大牛
+                                    {% elif role.roletype == 3 %}
+                                        弱菜
+                                    {% end %}
+
+                                    {{role.rolenick}}
+
+                        {% end %}
+                      {% end %}
+    </p>
+    <a class="btn btn-lg btn-primary btn-block" id="logout" href="/signOut">登出</a>
+    <div id="information">
+        <p>欢迎来到 dayBit !</p>
+        <p>输入「帮助」来查看详细游戏指南。</p>
+    </div>
+
+    <form onsubmit="return false;">
+    <input id="actions" name="orderContent" type="text"/>
+    <button class="btn btn-lg btn-primary btn-block" id="applyAction">执行</button>
+    </form>
+
+    <div id="footer">
+       
+    </div>
+</div>
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/css.js"></script>
+<script src="static/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>dayBit</title>
+    <meta name="description" content="Creating Modal Window with Bootstrap">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="static/css/index.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div id="title">
+        <h1>dayBit</h1>
+    </div>
+    <!-- loginModal -->
+            <div id="loginWindow">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">登录</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-signin" role="form" name="loginForm" method="post" action="/signIn">
+                        <input type="text" name="name" class="form-control" placeholder="用户名" required="" autofocus="">
+                        <input type="password" name="password" class="form-control" placeholder="密码" required="">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" data-dismiss="modal" id="loginButton">登录
+                        </button>
+                    </form>
+                    <button class="btn btn-lg btn-primary btn-block" data-dismiss="modal" data-toggle="modal"
+                            data-target="#registerWindow" id="register">没有帐号？点此注册
+                    </button>
+                </div>
+                    {% if signUpInfo %}
+                        {% for msg in signUpInfo %}
+                            <div class="alert alert-warning alert-dismissable">
+                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                              {{ msg }}
+                            </div>
+                        {% end %}
+                      {% end %}
+            </div>
+    <!-- loginModal -->
+    <div class="modal fade" id="registerWindow" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">注册</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-signin" role="form" name="createAccountFrom" method="post" action="/signUp">
+                        <input type="text" name="name" class="form-control" placeholder="用户名" required="" autofocus="">
+                        <input type="password" name="password" class="form-control" placeholder="密码" required="">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" id="registerButton">注册</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/css.js"></script>
+    <script src="static/js/index.js"></script>
+</div>
+</body>
+</html>

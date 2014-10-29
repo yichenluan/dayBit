@@ -1,0 +1,4 @@
+name: dayBit
+version: 3
+
+worker: tornado
