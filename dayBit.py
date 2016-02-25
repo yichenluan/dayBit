@@ -496,15 +496,3 @@ class ShowFormsHandler(BaseHandler):
 		info['roleGetEquip'] = achivInfo['getequip']
 		info['roleTotalExp'] = achivInfo['totalexp']
 		self.render("report.html", info = info)
-
-
-
-
-
-
-
-
-
-
-
-
