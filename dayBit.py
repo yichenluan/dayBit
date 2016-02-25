@@ -18,6 +18,7 @@ import tornado.database
 from tornado.httpclient import AsyncHTTPClient
 
 
+
 class BaseHandler(tornado.web.RequestHandler):
 	@property
 	def db(self):
